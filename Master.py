@@ -1,7 +1,9 @@
 # Master function calls. Uses glassCell(), which is the form of an incoming request that instantiates subclasses.
 import Profiles
+from Profiles import Profile
 import DatabaseControl
 import SiteControl
+from DatabaseControl import profiles_database_array
 
 # Master class which is instantiated and called in the driver file when a request comes in from the website.
 # *As of now, requests can only be made from the driver file and output can be printed to the screen.
@@ -23,6 +25,18 @@ class GlassCell:
 
       def get_keyword(self):
          return self.keyword
+      
+      def get_location(self):
+         return self.location
+      
+      def get_signal_date_time(self):
+         return self.signal_date_time
+      
+      def get_distress_level(self):
+         return self.distress_level
+      
+      def get_msg(self):
+         return self.message
         
    # based on input data, create a function that assigned the signal
    # the correct index and identifies the screen name.
@@ -42,9 +56,29 @@ def glassCell(new_GlassCell_request):
          SiteControl.broadcast_nonexistant_key(posed_keyword, "new")
 
    #apply case that key DOES EXIST:
+   #TODO
    elif(DatabaseControl.check_profile_existence(posed_keyword) == True):
+
       #add a new signal to existing profile, update database
-      return
+
+       # confirm to console
+      print("Success! New signal added to exisitng profile: ")
+      print("[INSERT HERE]")
+
+      # finally, rewrite file based on master_profile_array
+      DatabaseControl.rewrite_database()
    
    else: #create a new profile, add signals, update database
-      return
+
+      #creation statement, comes from Profile.py, uses the request obj
+      new_profile = Profile.create_new_profile(new_GlassCell_request)
+
+      # add the new profile to the master_profile_array
+      profiles_database_array.append(new_profile)
+
+      # confirm to console
+      print("Success! New profile added to master profile array: ")
+      print(new_profile)
+
+      # finally, rewrite file based on master_profile_array
+      DatabaseControl.rewrite_database()

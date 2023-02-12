@@ -2,6 +2,7 @@
 # The database uses nested dictionaries.
 import csv
 import re
+import datetime
 import random
 import requests
 import Profiles
@@ -66,12 +67,13 @@ def read_in_database():
 
 # Called frequently, after every modification to the database.
 def rewrite_database(file_path, profiles):
-    with open(file_path, 'w') as f:
+   with open(file_path, 'w') as f:
         for profile in profiles:
             profile_str = profile.get_keyword() + ', ' + profile.get_screen_name() + ', ' + profile.get_creation_date() + ', ' + profile.get_recent_location()
             for signal in profile.get_signals_arr():
                profile_str += ', ' + '[{}; {}; {}; {}; {}]'.format(signal.get_index(), signal.get_location(), signal.get_date_time(), signal.get_distress_level(), signal.get_msg())
             f.write(profile_str + '\n')
+   print("Success: Database overwritten with master profile array.")
 
 
 # Returns a profile object by parsing a line of the database given a keyword
@@ -88,9 +90,27 @@ def add_signal(keyword, signal):
 
 # important: get's the current profiles from the array 
 def get_current_profiles():
+   current_profiles = []
    read_in_database()
    for profile in profiles_database_array:
+      date_str = profile.get_creation_date()
+      date_object = datetime.datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+      # Get the current date and time
+      now = datetime.datetime.now()
+
+      # Calculate the difference between the two dates
+      difference = now - date_object
+
+      # Check if the difference is less than one year (365 days)
+      if difference < datetime.timedelta(days=365):
+         current_profiles.append(profile)
       
+      return current_profiles
+
+         
+         
+
+
 
 # Checks if a profile exists in the database when given a keyword
 def check_profile_existence(keyword):
