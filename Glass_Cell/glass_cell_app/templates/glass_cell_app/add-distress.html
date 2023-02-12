@@ -1,0 +1,26 @@
+{% extends 'glass_cell_app/layout.html' %}
+
+{% block title %}
+    Distress Page
+{% endblock %}
+
+
+
+{% block body %}
+<div class="action-box">
+    <h1>Distress Page</h1>
+    <div class="custom-line"></div>
+    <form action="" method="get">
+        <label for="name">Name:</label>
+        <input type="text" name="name" autocomplete="off"><br>
+
+        <label for="keyword">Keyword:</label>
+        <input type="text" name="Keyword"><br>
+
+        <label for="message">Message:</label>
+        <textarea placeholder="optional"></textarea><br>
+
+        <button class="btn btn-danger" type="submit" name="btn" value="Send for Help">Send for Help</button>
+    </form>
+</div>
+{% endblock %}
