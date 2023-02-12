@@ -46,12 +46,23 @@ def print_profiles(profiles_db):
       print(profile)
    return
 
+# Drive code ----------------------------------------------------------------------------
+
 # Read in the current database and store it in a 2D array
 db_path = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
 glassCells_database = DatabaseControl.read_in_database(db_path)
 
 # print new database to console
 print_profiles(glassCells_database)
+
+# print existing database to a new csv file as a test
+db_path2 = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database2.csv'
+DatabaseControl.rewrite_database(glassCells_database, db_path2)
+
+
+
+
+
 
 # perpetual loop of reading new requests
 

@@ -59,14 +59,12 @@ def read_in_database(file_path):
          
    return profiles_database_array
 
-            
-   
-   # for every profile object, give it subsequent signal objects
-   return profiles_database_array
-
-# Called frequently, after every modification to the database
-def rewrite_database():
-   return 
+# Called frequently, after every modification to the database.
+def rewrite_database(profiles_array, file_path):
+    with open(file_path, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for profile in profiles_array:
+            writer.writerow([profile.__str__()])
 
 # Returns a profile object by parsing a line of the database given a keyword
 def add_profile(new_profile):
