@@ -64,7 +64,7 @@ class KeyMaker:
 # when called, reads in all keys, adds a new key, and updates file
 def new_key_process():
     # Instantiate a KeyMaker that will work for all of our cases-----------------------------
-    keys_path = "/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glass-cell-keys.csv"
+    keys_path = "/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-data.csv"
     dictionary_url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
 
     # Create the object and read-in from file

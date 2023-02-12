@@ -27,7 +27,5 @@ class GlassCell:
 # Module functions-----------------------------------------------------------------------
 
 def glassCell(new_GlassCell_request):
-   #
-   
-   # send to profile.py
+   # create new profile, signal or add to existing one using logic and DatabaseControls.py
    return

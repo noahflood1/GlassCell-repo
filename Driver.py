@@ -40,14 +40,21 @@ import SiteControl
 
 # Module functions ----------------------------------------------------------------------
 
-# Read in the current database and store it in a dynamic dictionary
-driver_dictionary = {}
+# Print all profiles from the database to console.
+def print_profiles(profiles_db):
+   for profile in profiles_db:
+      print(profile)
+   return
+
+# Read in the current database and store it in a 2D array
+db_path = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
+glassCells_database = DatabaseControl.read_in_database(db_path)
+
+# print new database to console
+print_profiles(glassCells_database)
 
 # perpetual loop of reading new requests
 
 # send requests to master
 
 # add profiles as necessary
-
-
-Keys.new_key_process()
