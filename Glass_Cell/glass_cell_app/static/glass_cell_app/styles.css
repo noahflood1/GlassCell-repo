@@ -75,6 +75,22 @@ body {
     border-radius: 0.75rem;
     overflow: hidden;
 }
+.action-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: aqua;
+    margin: 3rem 3rem;
+    height: calc(100% - 4rem);
+}
+.custom-line {
+    width:80%;
+    height:2px;
+    margin:20px;
+    background-color: black;
+
+}
 .logo {
     width: 42px;
     height: 42px;
