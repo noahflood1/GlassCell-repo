@@ -1,0 +1,26 @@
+{% extends 'glass_cell_app/layout.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="logo"></div>
+        <div class="brand-name"></div>
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Games</a>
+              <a class="dropdown-item" href="#">Map</a>
+              <a class="dropdown-item" href="#">Distress</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary">Sign In</button>
+    </header>
+    <div class="centered-container section-divider"></div>
+    <div class="centered-container console-container"></div>
+    <div class="about"></div>
+{% endblock %}
