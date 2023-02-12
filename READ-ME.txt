@@ -1,4 +1,5 @@
 Welcome to GlassCell, a human-trafficking prevention software.
+
 Team members:
 - Angie
 - Dan
@@ -6,10 +7,11 @@ Team members:
 - Noah
 
 
-STUFF TO ADD (noah's notes)
+STUFF TO ADD/ ASAP CHANGES (noah's notes)
 --------------------------
 * Add a way for people to see the public name of the profile/keyword that is not the same
    as the keyword.
+* Change the keys database to a more general purpose database (see "datastructures")
 
 FUNCTIONALITY and ABSTRACTION
 -----------------------------------------------------------------
@@ -18,11 +20,27 @@ DATABASE
 --------
 Every entry ine database contains the following information:
 1. Profile:
-   Each profile contains a unqiue keyword and a history of signals.
+   Each profile contains a unqiue "keyword," a "screen name" and a history of signals.
 2. Signal(s): (-within profiles, same line)
    Each signal has a chronological index in the profile array. Every signal input includes the date & time
    of the signal, the location, the sequential index of the signal, the healthbar of the signal, 
    and the associted message message.
+
+   DATASTRUCTURES
+   --------------
+   1. PROFILES: 
+      Stored in a CSV file.
+      The CSV file can be parsed using delimeters. 
+      For computation and processing, every profile is stored as an item in a dictionary.
+      The key is the keyword, the value is embedded lists containing signals.
+   ************************************************************************************************************
+   ********* To use delimeters, we will need to add flags in the CSV to know when one type of data stops ******
+   ********* and another starts.                                                                         ******
+   ************************************************************************************************************
+   2. SIGNALS:
+      Each signal is stored as a linked list? or map? of values to retain order.
+   3. DATAPOINTS
+      Data points are stored in each signal array as comma-separated values.
 
 IN CASE OF GENERIC SIGNALS
 ---------------------------
@@ -41,6 +59,7 @@ Any of the following cases will be overwritten with a new keyword regardless of 
       Healthbar: listed as "unspecified"
       Messsage: a generic message, such as "I'm in danger; I need help!!" is set
    IMPLICIT INFORMATION:
+      Screen name: randomly generated
       Location: still stored
       Date/time: still stored and set to new Profile
       Chronological index: set to zero, of course.

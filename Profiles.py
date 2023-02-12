@@ -8,6 +8,8 @@ import requests
 A Profile contains all the user info associated with a specific key that can be stored
 in the database.
 
+Handles data control of profiles in database.
+
 Information for a Profile comes from a signal object.
 
 '''
