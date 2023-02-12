@@ -2,7 +2,7 @@
 # It must call from DatabaseControls.py before processing signal to check existance and index.
 import time
 import requests
-import DatabaseControls
+import DatabaseControl
 
 class Signal:
     def __init__(self, location, date_time, keyword, distress_level, message):
@@ -16,3 +16,5 @@ class Signal:
     def broadcast():
         # send
         return
+    
+# Module functions ----------------------------------------------------------------------

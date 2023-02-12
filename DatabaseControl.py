@@ -1,6 +1,16 @@
 # Bottom level processes; verifies requests and modifies database accordingly. Parses database.
-import Profile
-import Signal
+import csv
+import random
+import requests
+import Profiles
+import Signals
+
+# Module functions ----------------------------------------------------------------------
+
+# reads the database into program and stores profiles in Master.py
+def read_in_database():
+   database_dict
+   return database_dict
 
 # Returns a profile object by parsing a line of the database given a keyword
 def get_profile(keyword):

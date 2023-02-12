@@ -1,5 +1,7 @@
 # Handles all site changes.
 
+# Module functions ----------------------------------------------------------------------
+
 def display_current_profiles():
    # for ever profiles in the database, only display current ones that are not older than 1 year.
    # those can be accessed later in a list form.

@@ -1,7 +1,7 @@
 import Master
-import Profile
-import Signal
-import DatabaseControls
+import Profiles
+import Signals
+import DatabaseControl
 import SiteControl
 # Description
 # -----------
@@ -37,6 +37,8 @@ import SiteControl
 #    signal index: derived on client side
 #
 # Website
+
+# Module functions ----------------------------------------------------------------------
 
 # Generate a new key
 Keys.new_key_process()

@@ -1,7 +1,7 @@
 # For creating user profiles that will be uploaded to the database.
 import time
 import requests
-import Signal
+import Signals
 
 # A Profile contains all the user info associated with a specific key that can be stored
 # in the database.
@@ -17,3 +17,15 @@ class Profile:
         self.screen_name = screen_name
         self.screen_name = recent_location
         self.creation_date = creation_date
+    
+    def get_keyword(self):
+        return self.keyword
+
+    def get_screen_name(self):
+        return self.screen_name
+
+
+# Module functions ----------------------------------------------------------------------
+def generate_keyword():
+    unique_keyword = "empty"
+    return unique_keyword

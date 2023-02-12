@@ -1,6 +1,6 @@
 # Master function calls. Uses glassCell(), which is the form of an incoming request that instantiates subclasses.
-import Profile
-import DatabaseControls
+import Profiles
+import DatabaseControl
 
 # Master class which is instantiated and called in the driver file when a request comes in from the website.
 # *As of now, requests can only be made from the driver file and output can be printed to the screen.
