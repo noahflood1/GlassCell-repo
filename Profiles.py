@@ -1,25 +1,39 @@
-'''
-For creating user profiles that will be uploaded to the database.
-'''
+# For creating user profiles that will be uploaded to the database.
 import time
 import requests
+import Signals
 
-'''
-A Profile contains all the user info associated with a specific key that can be stored
-in the database.
-
-Information for a Profile comes from a signal object.
-
-'''
+# A Profile contains all the user info associated with a specific key that can be stored
+# in the database.
+#
+# Indirectly handles data control of profiles in database.
+#
+# Information for a Profile comes from a signal object.
 class Profile:
-    def __init__(self, name, current_status, location=None):
-        self._current_status = current_status
-        self._time_of_creation = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
-        self._location = location
-        self._message = None
+    def __init__(self, keyword, signals_array, profile_dict=None, screen_name=None,  recent_location=None, creation_date=None):
+        self.profile_dict = profile_dict
+        self.keyword = keyword
+        self.signals_array = signals_array
+        self.screen_name = screen_name
+        self.screen_name = recent_location
+        self.creation_date = creation_date
+    
+    def get_keyword(self):
+        return self.keyword
 
-    def update_location(self):
-        response = requests.get(f'https://maps.googleapis.com/maps/api/geolocation/json?key={AIzaSyCR3TJ9WEg90UBZKPhAOjoKwLmy3wgR69M}')
-        response_json = response.json()
-        if response_json['status'] == 'OK':
-            self.location = response_json['location']
+    def get_screen_name(self):
+        return self.screen_name
+    
+    def get_signal(self):
+        specified_signal = "empty"
+        return specified_signal
+
+
+# Module functions ----------------------------------------------------------------------
+def generate_keyword():
+    unique_keyword = "empty"
+    return unique_keyword
+
+def generate_screenname():
+    unique_screenname = "empty"
+    return unique_screenname

@@ -1,37 +1,20 @@
-from Profiles import Profile
+# Signal.py takes parameters from original request --> Master --> Profile and creates a new signal object.
+# It must call from DatabaseControls.py before processing signal to check existance and index.
 import time
 import requests
+import DatabaseControl
 
-'''Process new signal requets from the website.
-For now, the driver program serves as input from the website.
-'''
-
-
-
-
-
-'''
-A signal contains info sent from the client at websites. It must be parsed and processed.
-Signals will be broadcast based on keyword.
-
-SIGNALS.PY handles signals and processing in database.s
-
-explicity from client:
-    keyword: can be specific or empty
-    healthbar: can be a number 1-5 or empty
-    message: can be empty, is set to something generic of not specified
-
-sourced from client:
-    location data: necesssary, without it cannot broadcast. need to process both cases
-
-'''
 class Signal:
-    def __init__(self, keyword, healthbar, message):
-        self._keyword = keyword
-        self._keyword = keyword
-        self._healthbar = healthbar
-        self._message = message
+    def __init__(self, location, date_time, keyword, distress_level, message):
+        self.location = location
+        self.date_time = date_time
+        self.keyword = keyword
+        self.keyword = keyword
+        self.healthbar = distress_level
+        self.message = message
     
     def broadcast():
         # send
         return
+    
+# Module functions ----------------------------------------------------------------------
