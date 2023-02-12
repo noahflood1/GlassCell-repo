@@ -9,25 +9,59 @@ import Signals
 # Indirectly handles data control of profiles in database.
 #
 # Information for a Profile comes from a signal object.
+# Every profile contains nested dictionaries
 class Profile:
-    def __init__(self, keyword, signals_array, profile_dict=None, screen_name=None,  recent_location=None, creation_date=None):
-        self.profile_dict = profile_dict
+    def __init__(self, keyword, screen_name, creation_date, recent_location, signals_arr):
         self.keyword = keyword
-        self.signals_array = signals_array
         self.screen_name = screen_name
-        self.screen_name = recent_location
         self.creation_date = creation_date
+        self.recent_location = recent_location
+        self.signals_arr = signals_arr #contains the signal objects for this profile
     
+    # To String method
+    def __str__(self):
+        signals_string = ""
+        for signal in self.signals_arr:
+            signals_string = signals_string + signal.__str__() + "\n"
+
+        return "KEYWORD: {}\nScreen name: {}\nCreation date: {}\nRecent location: {}\nSignals:\n{}".format(
+            self.keyword,
+            self.screen_name,
+            self.creation_date,
+            self.recent_location,
+            signals_string 
+        )
+    # Getters ----------------------------------------------------------------------
     def get_keyword(self):
         return self.keyword
 
     def get_screen_name(self):
         return self.screen_name
     
-    def get_signal(self):
-        specified_signal = "empty"
-        return specified_signal
+    def get_creation_date(self):
+        return self.creation_date
+    
+    def get_recent_location(self):
+        return self.recent_location
+    
+    def get_signals_arr(self):
+        return self.signals_arr
+    
+    # Setters ----------------------------------------------------------------------
+    def set_keyword(self, k):
+        self.keyword = k
 
+    def set_screen_name(self, sm):
+        self.screen_name = sm
+    
+    def set_creation_date(self, cd):
+        self.creation_date = cd
+    
+    def set_recent_location(self, loc):
+        self.recent_location = loc
+    
+    def set_signals_arr(self, arr):
+        self.signals_arr = arr
 
 # Module functions ----------------------------------------------------------------------
 def generate_keyword():
@@ -35,5 +69,13 @@ def generate_keyword():
     return unique_keyword
 
 def generate_screenname():
+    unique_screenname = "empty"
+    return unique_screenname
+
+def create_new_profile(new_GlassCell_request):
+    unique_screenname = "empty"
+    return unique_screenname
+
+def add_signal_to_existing_profile(new_GlassCell_request):
     unique_screenname = "empty"
     return unique_screenname
