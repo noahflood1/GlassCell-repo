@@ -15,7 +15,7 @@ from DatabaseControl import profiles_database_array
 class GlassCell:
    default_message = "Please help! I am in danger."
 
-   def __innit__(self, location, signal_date_time, keyword='unspecified', distress_level=3, message=default_message, signal_index=None):
+   def __init__(self, location, signal_date_time, keyword='unspecified', distress_level=3, message=default_message, signal_index=None):
       self.location = location
       self.date_time = signal_date_time
       self.keyword = keyword
@@ -46,7 +46,8 @@ class GlassCell:
 
 # create new profile, signal or add to existing one using logic and DatabaseControls.py
 def glassCell(new_GlassCell_request):
-   posed_keyword = new_GlassCell_request.get_keyword()
+   posed_keyword = new_GlassCell_request.keyword
+   print("POSED KEYWORD: " + posed_keyword)
 
    # Check and apply for noniexstent key
    if(posed_keyword == 'unspecified' or DatabaseControl.check_profile_existence(posed_keyword) == False):
@@ -57,7 +58,7 @@ def glassCell(new_GlassCell_request):
 
    #apply case that key DOES EXIST:
    #TODO
-   elif(DatabaseControl.check_profile_existence(posed_keyword) == True):
+   if(DatabaseControl.check_profile_existence(posed_keyword) == True):
 
       #add a new signal to existing profile, update database
 
@@ -71,7 +72,7 @@ def glassCell(new_GlassCell_request):
    else: #create a new profile, add signals, update database
 
       #creation statement, comes from Profile.py, uses the request obj
-      new_profile = Profile.create_new_profile(new_GlassCell_request)
+      new_profile = Profiles.create_new_profile(new_GlassCell_request)
 
       # add the new profile to the master_profile_array
       profiles_database_array.append(new_profile)

@@ -6,9 +6,9 @@ import DatabaseControl
 # tell user if they specify a key in their signal request but it doesn't exist.
 def broadcast_nonexistant_key(posed_key, flag):
    if(flag == 'unfound'):
-      print("Specified key does not exist. Broadcast overwritten with new key: ", )
+      print("Specified key does not exist. Broadcast overwritten with new key: [insert new keyword created here]", )
    if(flag == 'new'):
-      print("Keyword unspecified. Here's your keyword! Do not forget: ", )
+      print("Keyword unspecified. [insert new keyword created here]")
 
 def display_current_profiles():
    # for ever profiles in the database, only display current ones that are not older than 1 year.
