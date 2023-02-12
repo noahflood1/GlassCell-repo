@@ -1,6 +1,7 @@
 from Profile import Profile
 import Keys
 # Driver file
+# -----------
 # *  Handles all requests at all times.
 # *  Provides and passes data to the glassCell() function.
 # 
@@ -15,7 +16,20 @@ import Keys
 #
 # *  Profile.py creates new keys and asks Signals.py for a new signal value to enter into database.
 # *  Other parameters from driver file include information for site_controls, which are sent to
-#   SiteControl.py
+#    SiteControl.py
+#
+# Data Collection
+# ---------------
+# explicity from client:
+#    keyword: can be specific or empty
+#    distress_level: can be a number 1-5 or empty
+#    message: can be empty, is set to something generic of not specified
+#
+# implicit from client:
+#    location: necesssary, without it cannot broadcast. need to process both cases
+#    date & time: necessary, can be accessed from server side if needed.
+#
+#    signal index: derived on client side
 
 # Generate a new key
 Keys.new_key_process()
