@@ -1,0 +1,28 @@
+Welcome to GlassCell, a human-trafficking prevention software.
+Team members:
+- Angie
+- Dan
+- Kevin
+- Noah
+
+FUNCTIONALITY and ABSTRACTION -----------------------------------------------------------------
+
+DATABASE:
+Every entry ine database contains the following information:
+1. Profile.
+   Each profile contains a unqiue keyword and a history of signals.
+2. Signals (-within profiles, same line)
+   Each signal has a chronological index in the profile array. Every signal input includes the date & time
+   of the signal, the location, the index of the signal, the healthbar of the signal, and the message
+
+IN CASE OF GENERIC SIGNAL:
+* Some signals will be entirely empty, with no existing corresponding profile
+ This case will be overwritten with a new keyword regardless of three possibilites;
+ 
+ 
+   so a new keyword must be created for it.
+* in this case
+
+
+
+
