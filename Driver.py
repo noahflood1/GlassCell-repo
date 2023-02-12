@@ -1,4 +1,4 @@
-from GlassCell import Profile
+from Profiles import Profile
 '''
 Driver file.
 '''
