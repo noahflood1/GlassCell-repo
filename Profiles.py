@@ -31,7 +31,7 @@ class Profile:
             self.recent_location,
             signals_string 
         )
-    
+    # Getters ----------------------------------------------------------------------
     def get_keyword(self):
         return self.keyword
 
@@ -46,6 +46,22 @@ class Profile:
     
     def get_signals_arr(self):
         return self.signals_arr
+    
+    # Setters ----------------------------------------------------------------------
+    def set_keyword(self, k):
+        self.keyword = k
+
+    def set_screen_name(self, sm):
+        self.screen_name = sm
+    
+    def set_creation_date(self, cd):
+        self.creation_date = cd
+    
+    def set_recent_location(self, loc):
+        self.recent_location = loc
+    
+    def set_signals_arr(self, arr):
+        self.signals_arr = arr
 
 # Module functions ----------------------------------------------------------------------
 def generate_keyword():
@@ -53,5 +69,13 @@ def generate_keyword():
     return unique_keyword
 
 def generate_screenname():
+    unique_screenname = "empty"
+    return unique_screenname
+
+def create_new_profile(new_GlassCell_request):
+    unique_screenname = "empty"
+    return unique_screenname
+
+def add_signal_to_existing_profile(new_GlassCell_request):
     unique_screenname = "empty"
     return unique_screenname

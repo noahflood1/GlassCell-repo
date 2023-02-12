@@ -30,15 +30,21 @@ class GlassCell:
 
 # Module functions-----------------------------------------------------------------------
 
+# create new profile, signal or add to existing one using logic and DatabaseControls.py
 def glassCell(new_GlassCell_request):
    posed_keyword = new_GlassCell_request.get_keyword()
 
    # Check and apply for noniexstent key
    if(posed_keyword == 'unspecified' or DatabaseControl.check_profile_existence(posed_keyword) == False):
       if(posed_keyword != 'unspecified'):
-         SiteControl.broadcast_nonexistant_key(posed_keyword, "Key not heard")
+         SiteControl.broadcast_nonexistant_key(posed_keyword, "unfound")
       if(posed_keyword == 'unspecified'):
-         SiteControl.broadcast_nonexistant_key(posed_keyword, "Key not heard")
+         SiteControl.broadcast_nonexistant_key(posed_keyword, "new")
+
+   #apply case that key DOES EXIST:
+   elif(DatabaseControl.check_profile_existence(posed_keyword) == True):
+      #add a new signal to existing profile, update database
+      return
    
-   # create new profile, signal or add to existing one using logic and DatabaseControls.py
-   return
+   else: #create a new profile, add signals, update database
+      return

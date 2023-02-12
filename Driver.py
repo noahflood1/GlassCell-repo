@@ -132,6 +132,10 @@ Master.glassCell(NEW_REQUEST)
 
 # Add a signal to an existing profile
 
+# Print active profiles to console
+SiteControl.display_current_profiles()
+
+
 # perpetual loop of reading new requests
 
 # send requests to master

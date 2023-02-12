@@ -11,7 +11,7 @@ import SiteControl
 # Fields -------------------------------------------------------------------------------
 
 DB_PATH = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
-profiles_database_array = []
+profiles_database_array = [] #MASTER DATABASE VARIABLE
 
 # Module functions ----------------------------------------------------------------------
 
@@ -86,12 +86,15 @@ def get_profile(keyword):
 def add_signal(keyword, signal):
    return
 
+# important: get's the current profiles from the array 
+def get_current_profiles():
+   read_in_database()
+   for profile in profiles_database_array:
+      
+
 # Checks if a profile exists in the database when given a keyword
 def check_profile_existence(keyword):
    for profile in read_in_database():
       if(profile.get_keyword() == keyword):
          return True
    return False
-
-def get_profile_index(profile_obj):
-   return
