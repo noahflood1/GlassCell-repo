@@ -3,6 +3,7 @@ import Profiles
 import Signals
 import DatabaseControl
 import SiteControl
+import requests
 # Description
 # -----------
 # *  Handles all requests at all times.
@@ -33,12 +34,13 @@ import SiteControl
 # implicit from client:
 #    location: necesssary, without it cannot broadcast. need to process both cases
 #    date & time: necessary, can be accessed from server side if needed.
-#
 #    signal index: derived on client side
-#
-# Website
 
-# Module functions ----------------------------------------------------------------------
+# MODULE FUNCTIONS ----------------------------------------------------------------------
+
+# Accesses Google map's API to provide some "clientside" location data
+def get_example_client_location():
+   return
 
 # Print all profiles from the database to console.
 def print_profiles(profiles_db):
@@ -46,15 +48,15 @@ def print_profiles(profiles_db):
       print(profile)
    return
 
-# Drive code ----------------------------------------------------------------------------
+# DRIVER CODE ---------------------------------------------------------------------------
 
 # Read in the current database, store it in the DatabaseControls.py module.
 DatabaseControl.read_in_database()
 
-# Proccess some examples ---------------------------------------------------------------
+# REQUEST EXAMPLES ----------------------------------------------------------------------
 
-# New request: create a new profile that doesn't exist yet
-NEW_REQUEST = Master.GlassCell()
+# New request: create a new profile that doesn't exist yet, and provide all possible parameters
+NEW_REQUEST = Master.GlassCell(location = )
 Master.glassCell(NEW_REQUEST)
 
 # New request: create a new profile with entirely empty parameters other than implicit
@@ -67,8 +69,7 @@ Master.glassCell(NEW_REQUEST)
 
 # add profiles as necessary
 
-# Finalization/testing ------------------------------------------------------------------
-
+# FINALIZATION/TESTING ------------------------------------------------------------------
 # print new database to console
 # print_profiles(glassCells_database)
 # print existing database to a new csv file as a test
