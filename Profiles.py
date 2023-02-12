@@ -23,9 +23,17 @@ class Profile:
 
     def get_screen_name(self):
         return self.screen_name
+    
+    def get_signal(self):
+        specified_signal = "empty"
+        return specified_signal
 
 
 # Module functions ----------------------------------------------------------------------
 def generate_keyword():
     unique_keyword = "empty"
     return unique_keyword
+
+def generate_screenname():
+    unique_screenname = "empty"
+    return unique_screenname

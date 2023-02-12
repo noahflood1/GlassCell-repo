@@ -9,8 +9,16 @@ import Signals
 
 # reads the database into program and stores profiles in Master.py
 def read_in_database():
-   database_dict
+   database_dict = {}
    return database_dict
+
+# Called frequently, after every modification to the database
+def write_database():
+   return 
+
+# Returns a profile object by parsing a line of the database given a keyword
+def add_profile(new_profile):
+   return
 
 # Returns a profile object by parsing a line of the database given a keyword
 def get_profile(keyword):

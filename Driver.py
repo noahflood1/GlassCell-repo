@@ -40,5 +40,14 @@ import SiteControl
 
 # Module functions ----------------------------------------------------------------------
 
-# Generate a new key
+# Read in the current database and store it in a dynamic dictionary
+driver_dictionary = {}
+
+# perpetual loop of reading new requests
+
+# send requests to master
+
+# add profiles as necessary
+
+
 Keys.new_key_process()
