@@ -5,7 +5,7 @@
 }
 
 :root {
-    --bg-color: #7BBD98;
+    --bg-color: #7B8D96;
     --clr-primary-400: #7e5555;
     --clr-secondary-400: #FFF;
     --btn-bg-color: #D0E2EB;
@@ -16,22 +16,56 @@
 html, body {
     height: 100vh;
     width: 100%;
-}
-
-body {
-    background-color: var(--bg-color);
+    font: var(--clr-secondary-400);
 }
 
 header {
-    padding: 0 auto;
+    display: flex;
+    width: 560px;
+    margin: 0.5rem auto;
+    align-items: center;
+}
+.brand-name {
+    padding-left: 0.5rem;
+    margin-right: auto;
+    color: #FFF;
+}
+body {
+    background-color: var(--bg-color);
+}
+.nav ul {
+    padding-right: 2rem;
+    margin: auto;
+}
+.nav ul li {
+    display: inline-block;
+    list-style: none;
+    background-color: var(--btn-bg-color);
+}
+.nav ul li a {
+    text-decoration: none;
+    color: var(--clr-primary-400);
+    font-size: 1rem;
+}
+#menu-list li {
+    display: none;
+}
+#menu-list li:hover, li:active {
+    display: block;
+    transition: 0.5sec;
+}
+.logo {
+    width: 42px;
+    height: 30px;
 }
 .centered-container {
     margin: 0 auto;
 }
 .section-divider {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    background-color: var(--border-color);
     width: 600px;
+    height: 1px;
 }
 .console-container {
     margin-top: 1.75rem;
@@ -39,4 +73,14 @@ header {
     height: 560px;
     background-color: #FFF;
     border-radius: 0.75rem;
+    overflow: hidden;
+}
+.logo {
+    width: 42px;
+    height: 42px;
+    background-color: #FFF;
+}
+
+.image-wrapper {
+    background: rgba(0, 0, 0, 50%);
 }
