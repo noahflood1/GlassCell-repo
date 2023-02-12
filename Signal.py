@@ -4,14 +4,6 @@ import time
 import requests
 import DatabaseControls
 
-
-# explicity from client:
-#    keyword: can be specific or empty
-#    distress_level: can be a number 1-5 or empty
-#    message: can be empty, is set to something generic of not specified
-#
-# implicit from client:
-#    location: necesssary, without it cannot broadcast. need to process both cases
 class Signal:
     def __init__(self, keyword, healthbar, message):
         self._keyword = keyword

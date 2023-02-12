@@ -1,9 +1,14 @@
-from Profile import Profile
-import Keys
-# Driver file
+import Master
+import Profile
+import Signal
+import DatabaseControls
+import SiteControl
+# Description
 # -----------
 # *  Handles all requests at all times.
 # *  Provides and passes data to the glassCell() function.
+# *  Handles top-level management of all processes
+# *  Sends site changes to live, such as updating the website with current signals.
 # 
 # Signal path: 
 #      Profile.py --> 
@@ -30,6 +35,8 @@ import Keys
 #    date & time: necessary, can be accessed from server side if needed.
 #
 #    signal index: derived on client side
+#
+# Website
 
 # Generate a new key
 Keys.new_key_process()
