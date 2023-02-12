@@ -1,20 +1,8 @@
-from Profiles import Profile
 import time
 import requests
 
-'''Process new signal requets from the website.
-For now, the driver program serves as input from the website.
-'''
-
-
-
-
-
-'''
-A signal contains info sent from the client at websites. It must be parsed and processed.
-Signals will be broadcast based on keyword.
-
-SIGNALS.PY handles signals and processing in database.s
+# Signal.py takes parameters from original request --> Master --> Profile and creates a new signal object.
+# It must check the database returns that ob
 
 explicity from client:
     keyword: can be specific or empty
