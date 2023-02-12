@@ -6,6 +6,7 @@ import random
 import requests
 import Profiles
 import Signals
+import SiteControl
 
 # Fields -------------------------------------------------------------------------------
 
@@ -90,7 +91,6 @@ def check_profile_existence(keyword):
    for profile in read_in_database():
       if(profile.get_keyword() == keyword):
          return True
-   
    return False
 
 def get_profile_index(profile_obj):
