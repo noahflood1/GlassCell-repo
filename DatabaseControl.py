@@ -7,14 +7,18 @@ import requests
 import Profiles
 import Signals
 
+# Fields -------------------------------------------------------------------------------
+
+DB_PATH = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
+profiles_database_array = []
+
 # Module functions ----------------------------------------------------------------------
 
 # reads the database into program and stores profiles in Driver.py
-def read_in_database(file_path):
-   profiles_database_array = []
+def read_in_database():
 
    # for every row, create a new profile object
-   with open(file_path, 'r') as file:
+   with open(DB_PATH, 'r') as file:
       reader  = csv.reader(file)
       for row in reader:
          keyword = row[0].strip()
@@ -81,8 +85,13 @@ def get_profile(keyword):
 def add_signal(keyword, signal):
    return
 
-def check_profile_existence(profile_obj):
-   return
+# Checks if a profile exists in the database when given a keyword
+def check_profile_existence(keyword):
+   for profile in read_in_database():
+      if(profile.get_keyword() == keyword):
+         return True
+   
+   return False
 
 def get_profile_index(profile_obj):
    return

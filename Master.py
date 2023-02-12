@@ -18,7 +18,7 @@ class GlassCell:
       self.keyword = keyword
       self.distress_level = distress_level
       self.message = message
-      self.signal_index = None
+      self.signal_index = signal_index
         
    # based on input data, create a function that assigned the signal
    # the correct index and identifies the screen name.
@@ -27,5 +27,9 @@ class GlassCell:
 # Module functions-----------------------------------------------------------------------
 
 def glassCell(new_GlassCell_request):
+
+   keyword = new_GlassCell_request.keyword
+   if(keyword == 'unspecified' or DatabaseControl.check_profile_existence(keyword) == FALSE):
+
    # create new profile, signal or add to existing one using logic and DatabaseControls.py
    return

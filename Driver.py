@@ -48,24 +48,29 @@ def print_profiles(profiles_db):
 
 # Drive code ----------------------------------------------------------------------------
 
-# Read in the current database and store it in a 2D array
-db_path = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
-glassCells_database = DatabaseControl.read_in_database(db_path)
+# Read in the current database, store it in the DatabaseControls.py module.
+DatabaseControl.read_in_database()
 
-# print new database to console
-print_profiles(glassCells_database)
+# Proccess some examples ---------------------------------------------------------------
 
-# print existing database to a new csv file as a test
-db_path2 = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database2.csv'
-DatabaseControl.rewrite_database(file_path=db_path2, profiles=glassCells_database)
+# New request: create a new profile that doesn't exist yet
+NEW_REQUEST = Master.GlassCell()
+Master.glassCell(NEW_REQUEST)
 
+# New request: create a new profile with entirely empty parameters other than implicit
 
-
-
-
+# Add a signal to an existing profile
 
 # perpetual loop of reading new requests
 
 # send requests to master
 
 # add profiles as necessary
+
+# Finalization/testing ------------------------------------------------------------------
+
+# print new database to console
+# print_profiles(glassCells_database)
+# print existing database to a new csv file as a test
+# db_path2 = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database2.csv'
+# DatabaseControl.rewrite_database(file_path=db_path2, profiles=glassCells_database)
