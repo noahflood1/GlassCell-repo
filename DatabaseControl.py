@@ -11,7 +11,7 @@ import SiteControl
 
 # Fields -------------------------------------------------------------------------------
 
-DB_PATH = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
+DB_PATH = '/Users/dannixon/Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
 profiles_database_array = [] #MASTER DATABASE VARIABLE
 
 # Module functions ----------------------------------------------------------------------

@@ -1,0 +1,8 @@
+CREATE TABLE flights(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    keyword TEXT NOT NULL,
+    screenname TEXT NOT NULL,
+    ping TEXT NOT NULL,
+    time TEXT NOT NULL,
+    duration INTEGER NOT NULL
+);
