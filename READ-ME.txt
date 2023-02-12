@@ -49,6 +49,10 @@ Futuristic lofty updates:
 -------------------
 - Use AI to intelligently smerge profiles with differing keywords
 
-
+STUFF TO ADD (Dan's notes)
+--------------------------
+* An easy to access website that features games to act as a disguise.
+* Link database to the website so that users can send keywords and save them to the csv file.
+* Add map function that Kevin worked on to our website. 
 
 
