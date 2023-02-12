@@ -1,4 +1,4 @@
-# Bottom level processes; verifies requets and modifies database accordingly. Parses database.
+# Bottom level processes; verifies requests and modifies database accordingly. Parses database.
 import Profile
 import Signal
 

@@ -10,15 +10,8 @@ import Signal
 #
 # Information for a Profile comes from a signal object.
 class Profile:
-    def __init__(self, name, current_status, location=None):
-        self._current_status = current_status
-        self._time_of_creation = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
-        self._location = location
-        self._message = None
-
-
-    def update_location(self):
-        response = requests.get(f'https://maps.googleapis.com/maps/api/geolocation/json?key={AIzaSyCR3TJ9WEg90UBZKPhAOjoKwLmy3wgR69M}')
-        response_json = response.json()
-        if response_json['status'] == 'OK':
-            self.location = response_json['location']
+    def __init__(self, keyword, signals_array, screen_name=None,  recent_location=None):
+        self.keyword = keyword
+        self.signals_array = signals_array
+        self.screen_name = screen_name
+        self.screen_name = recent_location

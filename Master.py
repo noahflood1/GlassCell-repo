@@ -12,9 +12,9 @@ import DatabaseControls
 class GlassCell:
    default_message = "Please help! I am in danger."
 
-   def __innit__(self, location, date_time, keyword='unspecified', distress_level=3, message=default_message, signal_index=None):
+   def __innit__(self, location, signal_date_time, keyword='unspecified', distress_level=3, message=default_message, signal_index=None):
       self.location = location
-      self.date_time = date_time
+      self.date_time = signal_date_time
       self.keyword = keyword
       self.distress_level = distress_level
       self.message = message
@@ -26,8 +26,8 @@ class GlassCell:
 
 # Module functions-----------------------------------------------------------------------
 
-def glassCell(new_request):
+def glassCell(new_GlassCell_request):
+   #
    
    # send to profile.py
-
    return

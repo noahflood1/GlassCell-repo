@@ -5,11 +5,13 @@ import requests
 import DatabaseControls
 
 class Signal:
-    def __init__(self, keyword, healthbar, message):
-        self._keyword = keyword
-        self._keyword = keyword
-        self._healthbar = healthbar
-        self._message = message
+    def __init__(self, location, date_time, keyword, distress_level, message):
+        self.location = location
+        self.date_time = date_time
+        self.keyword = keyword
+        self.keyword = keyword
+        self.healthbar = distress_level
+        self.message = message
     
     def broadcast():
         # send
