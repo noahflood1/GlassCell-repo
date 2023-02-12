@@ -60,11 +60,14 @@ def read_in_database(file_path):
    return profiles_database_array
 
 # Called frequently, after every modification to the database.
-def rewrite_database(profiles_array, file_path):
-    with open(file_path, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        for profile in profiles_array:
-            writer.writerow([profile.__str__()])
+def rewrite_database(file_path, profiles):
+    with open(file_path, 'w') as f:
+        for profile in profiles:
+            profile_str = profile.get_keyword() + ', ' + profile.get_screen_name() + ', ' + profile.get_creation_date() + ', ' + profile.get_recent_location()
+            for signal in profile.get_signals_arr():
+               profile_str += ', ' + '[{}; {}; {}; {}; {}]'.format(signal.get_index(), signal.get_location(), signal.get_date_time(), signal.get_distress_level(), signal.get_msg())
+            f.write(profile_str + '\n')
+
 
 # Returns a profile object by parsing a line of the database given a keyword
 def add_profile(new_profile):

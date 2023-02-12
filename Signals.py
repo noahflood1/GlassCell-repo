@@ -5,7 +5,7 @@ import requests
 import DatabaseControl
 import Profiles
 
-# Every signal contains nested dictionaries
+# Every signal contains criteria. Parameter management held elsewhere
 class Signal:
     def __init__(self, keyword, location, date_time, distress_level, message, index):
         self.keyword = keyword
@@ -24,4 +24,23 @@ class Signal:
             self.message
         )
     
+    def get_keyword(self):
+        return self.keyword
+    
+    def get_location(self):
+        return self.location
+    
+    def get_date_time(self):
+        return self.date_time
+    
+    def get_distress_level(self):
+        return self.distress_level
+
+    def get_msg(self):
+        return self.message
+    
+    def get_index(self):
+        return self.index
+    
+
 # Module functions ----------------------------------------------------------------------

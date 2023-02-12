@@ -38,9 +38,14 @@ class Profile:
     def get_screen_name(self):
         return self.screen_name
     
-    def get_signal(self):
-        specified_signal = "empty"
-        return specified_signal
+    def get_creation_date(self):
+        return self.creation_date
+    
+    def get_recent_location(self):
+        return self.recent_location
+    
+    def get_signals_arr(self):
+        return self.signals_arr
 
 # Module functions ----------------------------------------------------------------------
 def generate_keyword():

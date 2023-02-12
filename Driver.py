@@ -57,7 +57,7 @@ print_profiles(glassCells_database)
 
 # print existing database to a new csv file as a test
 db_path2 = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database2.csv'
-DatabaseControl.rewrite_database(glassCells_database, db_path2)
+DatabaseControl.rewrite_database(file_path=db_path2, profiles=glassCells_database)
 
 
 
