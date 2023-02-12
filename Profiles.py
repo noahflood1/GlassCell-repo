@@ -75,7 +75,7 @@ def generate_screen_name():
     unique_screen_name = Keys.new_screen_name_process(profiles_database_array)
     return unique_screen_name
 
-def create_new_profile(new_GlassCell_request):
+def create_new_profile(new_GlassCell_request, profiles_database_array):
     # read in the existing database
     DatabaseControl.read_in_database()
 

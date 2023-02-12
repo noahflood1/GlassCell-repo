@@ -107,11 +107,6 @@ def get_current_profiles():
       
       return current_profiles
 
-         
-         
-
-
-
 # Checks if a profile exists in the database when given a keyword
 def check_profile_existence(keyword):
    for profile in read_in_database():

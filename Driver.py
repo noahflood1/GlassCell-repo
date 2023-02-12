@@ -127,7 +127,7 @@ NEW_REQUEST = Master.GlassCell(location=ex_location, signal_date_time=ex_time)
 Master.glassCell(NEW_REQUEST)
 
 # New request: create a new profile with specified keyword that just doesn't exist
-NEW_REQUEST = Master.GlassCell(location=ex_location, signal_date_time=ex_time)
+NEW_REQUEST = Master.GlassCell(location="locationasdfasdfa", signal_date_time=ex_time)
 Master.glassCell(NEW_REQUEST)
 
 # MORE EXAMPLES:
