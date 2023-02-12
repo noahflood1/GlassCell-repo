@@ -5,23 +5,49 @@ Team members:
 - Kevin
 - Noah
 
-FUNCTIONALITY and ABSTRACTION -----------------------------------------------------------------
 
-DATABASE:
+STUFF TO ADD (noah's notes)
+--------------------------
+* Add a way for people to see the public name of the profile/keyword that is not the same
+   as the keyword.
+
+FUNCTIONALITY and ABSTRACTION
+-----------------------------------------------------------------
+
+DATABASE
+--------
 Every entry ine database contains the following information:
-1. Profile.
+1. Profile:
    Each profile contains a unqiue keyword and a history of signals.
-2. Signals (-within profiles, same line)
+2. Signal(s): (-within profiles, same line)
    Each signal has a chronological index in the profile array. Every signal input includes the date & time
-   of the signal, the location, the index of the signal, the healthbar of the signal, and the message
+   of the signal, the location, the sequential index of the signal, the healthbar of the signal, 
+   and the associted message message.
 
-IN CASE OF GENERIC SIGNAL:
-* Some signals will be entirely empty, with no existing corresponding profile
- This case will be overwritten with a new keyword regardless of three possibilites;
- 
- 
-   so a new keyword must be created for it.
-* in this case
+IN CASE OF GENERIC SIGNALS
+---------------------------
+* Some signals will be entirely empty, with no existing corresponding profile.
+* Others may have some subset of fields empty.
+
+Any of the following cases will be overwritten with a new keyword regardless of three possibilites:
+   (case A) -- Signal is from an entirely new user.
+   (cases B) -- Signal is from an existing user who mispelled their keyword.
+      In this case, the signal is still broadcast, but the user is notified of the unknown keyword
+   (case C) -- Signal is from an existing user who did not specify their keyword for some reason.
+
+* In any of those cases:
+   EXPLICIT INFORMATION: 
+      Keyword: new one is created
+      Healthbar: listed as "unspecified"
+      Messsage: a generic message, such as "I'm in danger; I need help!!" is set
+   IMPLICIT INFORMATION:
+      Location: still stored
+      Date/time: still stored and set to new Profile
+      Chronological index: set to zero, of course.
+
+Futuristic lofty updates:
+-------------------
+- Use AI to intelligently smerge profiles with differing keywords
 
 
 
