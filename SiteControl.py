@@ -1,9 +1,12 @@
 # Handles all site changes.
 
-def display_current_signals():
-    # for ever signal in the database, only display current ones that are not older than 1 year.
-    # those can be accessed later in a list form.
+def display_current_profiles():
+   # for ever profiles in the database, only display current ones that are not older than 1 year.
+   # those can be accessed later in a list form.
 
-changePage()
+   # connects to Google Maps API
+   return
 
-goHome()
+# sends commands to site to change pages and stuff based on criteria, not yet known
+def change_page():
+   return

@@ -74,6 +74,7 @@ Futuristic lofty updates:
 -------------------
 - Use AI to intelligently smerge profiles with differing keywords
 - Prevent spam and snooping by convicts
+- provide a way to resolve cases
 
 
 
