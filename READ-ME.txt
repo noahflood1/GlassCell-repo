@@ -12,6 +12,12 @@ STUFF TO ADD/ ASAP CHANGES (noah's notes)
 * Add a way for people to see the public name of the profile/keyword that is not the same
    as the keyword.
 * Change the keys database to a more general purpose database (see "datastructures")
+* make it posssible to airdrop a message 
+* connect website to code
+* print map to screen on website via online database, make viewable data
+* check voice assistant feasability
+* chech PHP connection
+* glassCell() master function call
 
 FUNCTIONALITY and ABSTRACTION
 -----------------------------------------------------------------
@@ -67,6 +73,7 @@ Any of the following cases will be overwritten with a new keyword regardless of 
 Futuristic lofty updates:
 -------------------
 - Use AI to intelligently smerge profiles with differing keywords
+- Prevent spam and snooping by convicts
 
 
 
