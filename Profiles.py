@@ -1,7 +1,10 @@
 # For creating user profiles that will be uploaded to the database.
 import time
+import datetime
 import requests
 import Signals
+import Keys
+import DatabaseControl
 
 # A Profile contains all the user info associated with a specific key that can be stored
 # in the database.
@@ -64,18 +67,59 @@ class Profile:
         self.signals_arr = arr
 
 # Module functions ----------------------------------------------------------------------
-def generate_keyword():
-    unique_keyword = "empty"
+def generate_keyword(profiles_database_array):
+    unique_keyword = Keys.new_key_process(profiles_database_array)
     return unique_keyword
 
-def generate_screenname():
-    unique_screenname = "empty"
-    return unique_screenname
+def generate_screen_name():
+    unique_screen_name = Keys.new_screen_name_process(profiles_database_array)
+    return unique_screen_name
 
 def create_new_profile(new_GlassCell_request):
-    unique_screenname = "empty"
-    return unique_screenname
+    # read in the existing database
+    DatabaseControl.read_in_database()
 
+    # generate a unique keyword
+    new_keyword = generate_keyword(profiles_database_array)
+
+    # generate a unique screen name
+    new_screen_name = generate_screen_name(profiles_database_array)
+
+    # get creation date for today
+    now = datetime.datetime.now()
+    new_creation_date = now.strftime("%B %d, %Y %H:%M:%S")
+
+    # get recent location
+    new_recent_location = new_GlassCell_request.getLocation()
+
+    # create an empty the signal array
+    signal_array = []
+
+    # create the only signal object available for the profile
+    first_signal = Signals.Signal(
+                  keyword=new_GlassCell_request.get_keyword(),
+                  location=new_GlassCell_request.get_location(),
+                  date_time=new_GlassCell_request.get_date_time(),
+                  distress_level=new_GlassCell_request.get_distress_level(),
+                  message=new_GlassCell_request.get_msg(),
+                  index=0)
+
+    #append it to the array
+    signal_array.append(first_signal)
+
+    # finally, instantiate a new profile
+    new_profile = Profile(
+            keyword=new_keyword,
+            screen_name=new_screen_name,
+            creation_date=new_creation_date,
+            recent_location=new_recent_location,
+            signals_arr=signal_array)
+    
+    # return it
+    return new_profile
+
+#TODO
 def add_signal_to_existing_profile(new_GlassCell_request):
-    unique_screenname = "empty"
-    return unique_screenname
+    # add a signal to existing profile obj
+    # make updates to recent location, 
+    return 

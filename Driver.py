@@ -130,21 +130,22 @@ Master.glassCell(NEW_REQUEST)
 NEW_REQUEST = Master.GlassCell(location=ex_location, signal_date_time=ex_time)
 Master.glassCell(NEW_REQUEST)
 
-# Add a signal to an existing profile
+# MORE EXAMPLES:
+# New request: create a new profile with some necessary pamaters
+# New request: create a new profile with some necessary pamaters (2)
+# New request: create a new profile with some necessary pamaters (2)
+
+#TODO
+# perpetual loop of reading new requests from site
+
+#TODO
+# New request: Request to add a signal to a profile that already exists
+
+# FINALIZATION/TESTING ------------------------------------------------------------------
 
 # Print active profiles to console
 SiteControl.display_current_profiles()
 
-
-# perpetual loop of reading new requests
-
-# send requests to master
-
-# add profiles as necessary
-
-# FINALIZATION/TESTING ------------------------------------------------------------------
-# print new database to console
-# print_profiles(glassCells_database)
 # print existing database to a new csv file as a test
 # db_path2 = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database2.csv'
 # DatabaseControl.rewrite_database(file_path=db_path2, profiles=glassCells_database)
