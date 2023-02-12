@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #7BBD98;
+    --clr-primary-400: #7e5555;
+    --clr-secondary-400: #FFF;
+    --btn-bg-color: #D0E2EB;
+    --btn2-bg-color: #FFF;
+    --border-color: #FFF;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+header {
+    padding: 0 auto;
+}
+.centered-container {
+    margin: 0 auto;
+}
+.section-divider {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 600px;
+}
+.console-container {
+    margin-top: 1.75rem;
+    width: 480px;
+    height: 560px;
+    background-color: #FFF;
+    border-radius: 0.75rem;
+}
