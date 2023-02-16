@@ -1,3 +1,5 @@
+MORE INFORMATION: https://www.notion.so/noahflood/GlassCell-3ed94d3d551f4622a5bd52118c897c5d
+
 Welcome to GlassCell, a human-trafficking prevention software.
 
 It's called glass cell because the goal is to shed light onto the situation for those who are in a dangerous situation, 
