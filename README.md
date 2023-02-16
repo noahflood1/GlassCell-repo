@@ -3,6 +3,11 @@ Welcome to GlassCell, a human-trafficking prevention software.
 It's called glass cell because the goal is to shed light onto the situation for those who are in a dangerous situation, 
 so that the walls of the situation become clear like glass, so someone can help the victim break out of their cell.
 
+To install, download the source code. You must change the DB_PATH variable in DatabaseControl.py to the pathname of your repo’s serverside-data folder.
+
+To run, compile and execute Driver.py. 
+See example use cases below the “Driver code” line.
+
 Team members:
 - Angie
 - Dan
