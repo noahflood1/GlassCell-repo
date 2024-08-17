@@ -42,8 +42,8 @@ import string
 
 # MODULE FIELDS ----------------------------------------------------------------------
 
-# don't this API key with anyone or publicize this file yet since people could abuse it. I can figure out how to encrypt it later
-NOAHS_GOOGLE_MAPS_API_KEY = 'AIzaSyCE_nCrG1MGT_TLMwqHYJAbwfP_z2MWZuI'
+# don't share this API key because it is a security risk. I can figure out how to encrypt it later
+NOAHS_GOOGLE_MAPS_API_KEY = ''
 brownn_kopel = "Engineering Shops, 152 Wilmore Dr, Auburn, AL 36849" #Brown-kopel lol
 
 #generate a random address in given state
