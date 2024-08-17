@@ -9,6 +9,7 @@ To install, download the source code. You must change the DB_PATH variable in Da
 
 To run, clone this repo and compile and execute Driver.py. 
 See example use cases below the “Driver code” line.
+(You would need a Google Maps API key, though. I'm assuming not many people will actually want to use this exact snapshot of prototype code.)
 
 Contributers:
 - Angie
