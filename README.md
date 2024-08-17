@@ -1,6 +1,6 @@
 **GlassCell**
 --------------------------
-Welcome to GlassCell, a human-trafficking prevention software.
+Welcome to GlassCell, a human-trafficking prevention software. This is a group project for the 2023 AU 24-hour hackathon.
 
 It's called glass cell because the goal is to shed light onto the situation for those who are in a dangerous situation, 
 so that the walls of the situation become clear like glass, so someone can help the victim break out of their cell.
