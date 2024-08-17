@@ -7,10 +7,10 @@ so that the walls of the situation become clear like glass, so someone can help 
 
 To install, download the source code. You must change the DB_PATH variable in DatabaseControl.py to the pathname of your repo’s serverside-data folder.
 
-To run, compile and execute Driver.py. 
+To run, clone this repo and compile and execute Driver.py. 
 See example use cases below the “Driver code” line.
 
-Team members:
+Contributers:
 - Angie
 - Dan
 - Kevin
@@ -22,15 +22,12 @@ STUFF TO ADD/ ASAP CHANGES (noah's notes)
 * Add a way for people to see the public name of the profile/keyword that is not the same
    as the keyword.
 * Change the keys database to a more general purpose database (see "datastructures")
-* make it posssible to airdrop a message 
-* connect website to code
+* AirDrop support
+* Deploy site
 * print map to screen on website via online database, make viewable data
 * check voice assistant feasability
 * chech PHP connection
 * glassCell() master function call
-
-FUNCTIONALITY and ABSTRACTION
------------------------------------------------------------------
 
 DATABASE
 --------
@@ -65,7 +62,7 @@ IN CASE OF GENERIC SIGNALS
 
 Any of the following cases will be overwritten with a new keyword regardless of three possibilites:
    (case A) -- Signal is from an entirely new user.
-   (cases B) -- Signal is from an existing user who mispelled their keyword.
+   (case B) -- Signal is from an existing user who mispelled their keyword.
       In this case, the signal is still broadcast, but the user is notified of the unknown keyword
    (case C) -- Signal is from an existing user who did not specify their keyword for some reason.
 
@@ -80,7 +77,7 @@ Any of the following cases will be overwritten with a new keyword regardless of 
       Date/time: still stored and set to new Profile
       Chronological index: set to zero, of course.
 
-Futuristic lofty updates:
+Future updates:
 -------------------
 - Use AI to intelligently smerge profiles with differing keywords
 - Prevent spam and snooping by convicts
