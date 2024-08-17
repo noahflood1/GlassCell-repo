@@ -1,4 +1,4 @@
-MORE INFORMATION: https://www.notion.so/noahflood/GlassCell-3ed94d3d551f4622a5bd52118c897c5d
+more info: https://www.notion.so/noahflood/GlassCell-3ed94d3d551f4622a5bd52118c897c5d
 
 Welcome to GlassCell, a human-trafficking prevention software.
 
@@ -17,7 +17,7 @@ Contributers:
 - Noah
 
 
-STUFF TO ADD/ ASAP CHANGES (noah's notes)
+Pending features (noah's notes)
 --------------------------
 * Add a way for people to see the public name of the profile/keyword that is not the same
    as the keyword.
@@ -29,7 +29,10 @@ STUFF TO ADD/ ASAP CHANGES (noah's notes)
 * chech PHP connection
 * glassCell() master function call
 
-DATABASE
+Functionality
+--------
+
+Database
 --------
 Every entry ine database contains the following information:
 1. Profile:
@@ -39,7 +42,7 @@ Every entry ine database contains the following information:
    of the signal, the location, the sequential index of the signal, the healthbar of the signal, 
    and the associted message message.
 
-   DATASTRUCTURES
+   Abstract Data Structures
    --------------
    1. PROFILES: 
       Stored in a CSV file.
@@ -55,7 +58,7 @@ Every entry ine database contains the following information:
    3. DATAPOINTS
       Data points are stored in each signal array as comma-separated values.
 
-IN CASE OF GENERIC SIGNALS
+In case of generic signals
 ---------------------------
 * Some signals will be entirely empty, with no existing corresponding profile.
 * Others may have some subset of fields empty.
@@ -82,11 +85,4 @@ Future updates:
 - Use AI to intelligently smerge profiles with differing keywords
 - Prevent spam and snooping by convicts
 - provide a way to resolve cases
-
-STUFF TO ADD (Dan's notes)
---------------------------
-* An easy to access website that features games to act as a disguise.
-* Link database to the website so that users can send keywords and save them to the csv file.
-* Add map function that Kevin worked on to our website. 
-
 
