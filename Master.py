@@ -17,26 +17,26 @@ class GlassCell:
 
    def __init__(self, location, signal_date_time, keyword='unspecified', distress_level=3, message=default_message, signal_index=None):
       self.location = location
-      self.date_time = signal_date_time
+      self.signal_date_time = signal_date_time
       self.keyword = keyword
       self.distress_level = distress_level
       self.message = message
       self.signal_index = signal_index
 
-      def get_keyword(self):
-         return self.keyword
-      
-      def get_location(self):
-         return self.location
-      
-      def get_signal_date_time(self):
-         return self.signal_date_time
-      
-      def get_distress_level(self):
-         return self.distress_level
-      
-      def get_msg(self):
-         return self.message
+   def get_keyword(self):
+      return self.keyword
+   
+   def get_location(self):
+      return self.location
+   
+   def get_signal_date_time(self):
+      return self.signal_date_time
+   
+   def get_distress_level(self):
+      return self.distress_level
+   
+   def get_msg(self):
+      return self.message
         
    # based on input data, create a function that assigned the signal
    # the correct index and identifies the screen name.
@@ -72,7 +72,7 @@ def glassCell(new_GlassCell_request):
    else: #create a new profile, add signals, update database
 
       #creation statement, comes from Profile.py, uses the request obj
-      new_profile = Profiles.create_new_profile(new_GlassCell_request)
+      new_profile = Profiles.create_new_profile(profiles_database_array, new_GlassCell_request)
 
       # add the new profile to the master_profile_array
       profiles_database_array.append(new_profile)
@@ -82,4 +82,4 @@ def glassCell(new_GlassCell_request):
       print(new_profile)
 
       # finally, rewrite file based on master_profile_array
-      DatabaseControl.rewrite_database()
+      DatabaseControl.rewrite_database(DatabaseControl.DB_PATH, profiles_database_array)

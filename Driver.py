@@ -143,7 +143,9 @@ Master.glassCell(NEW_REQUEST)
 
 # FINALIZATION/TESTING ------------------------------------------------------------------
 
+
 # Print active profiles to console
+print("\n")
 SiteControl.display_current_profiles()
 
 # print existing database to a new csv file as a test

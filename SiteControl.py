@@ -15,8 +15,10 @@ def display_current_profiles():
    # those can be accessed later in a list form.
    #
    # for now, displays profiles screen name and previous locations in console
+   print("\n")
    current_profiles = DatabaseControl.get_current_profiles()
    for profile in current_profiles:
+      print("\n\n")
       signals_string = ""
       for signal in profile.get_signals_arr():
          signal_string = signal_string + signal.get_location() + ", "

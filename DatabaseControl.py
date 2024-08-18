@@ -11,7 +11,9 @@ import SiteControl
 
 # Fields -------------------------------------------------------------------------------
 
-DB_PATH = '/Users/noahflood/Downloads/AU Hackathon/GlassCell-repo/serverside-data/glassCells-database.csv'
+# you must change this to the path that you are using
+
+DB_PATH = '/Users/noahflood/Library/CloudStorage/OneDrive-AuburnUniversity/Auburn University/ACM/Auburn Hacks 2023/GlassCell-repo/serverside-data/glassCells-database.csv'
 profiles_database_array = [] #MASTER DATABASE VARIABLE
 
 # Module functions ----------------------------------------------------------------------
@@ -67,9 +69,17 @@ def read_in_database():
 
 # Called frequently, after every modification to the database.
 def rewrite_database(file_path, profiles):
+
+
    with open(file_path, 'w') as f:
         for profile in profiles:
-            profile_str = profile.get_keyword() + ', ' + profile.get_screen_name() + ', ' + profile.get_creation_date() + ', ' + profile.get_recent_location()
+            
+            # avoid a string concatenation error by just overwriting a NoneType with a MISSING_VALUE indicator
+            if profile.get_recent_location() is None:
+               profile_str = profile.get_keyword() + ', ' + profile.get_screen_name() + ', ' + profile.get_creation_date() + ', ' + "MISSING_LOCATION_VALUE"
+            else:
+               profile_str = profile.get_keyword() + ', ' + profile.get_screen_name() + ', ' + profile.get_creation_date() + ', ' + profile.get_recent_location()
+            
             for signal in profile.get_signals_arr():
                profile_str += ', ' + '[{}; {}; {}; {}; {}]'.format(signal.get_index(), signal.get_location(), signal.get_date_time(), signal.get_distress_level(), signal.get_msg())
             f.write(profile_str + '\n')

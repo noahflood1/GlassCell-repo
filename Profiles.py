@@ -1,10 +1,11 @@
 # For creating user profiles that will be uploaded to the database.
+import random
 import time
 import datetime
 import requests
 import Signals
-import Keys
 import DatabaseControl
+from DatabaseControl import profiles_database_array
 
 # A Profile contains all the user info associated with a specific key that can be stored
 # in the database.
@@ -14,7 +15,7 @@ import DatabaseControl
 # Information for a Profile comes from a signal object.
 # Every profile contains nested dictionaries
 class Profile:
-    def __init__(self, keyword, screen_name, creation_date, recent_location, signals_arr):
+    def __init__(self, keyword, creation_date, recent_location, signals_arr,  screen_name="unspecified",):
         self.keyword = keyword
         self.screen_name = screen_name
         self.creation_date = creation_date
@@ -67,30 +68,35 @@ class Profile:
         self.signals_arr = arr
 
 # Module functions ----------------------------------------------------------------------
-def generate_keyword(profiles_database_array):
-    unique_keyword = Keys.new_key_process(profiles_database_array)
-    return unique_keyword
+# Generate keys to be used in different scenarios, that are not necessarily unique.
+def generate_key():
+    dictionary_url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+    # Get the list of words from the dictionary API
+    words = requests.get(dictionary_url).text.splitlines()
+    word = random.choice(words)
+    number = str(random.randint(0, 999)).zfill(3)
+    keyword = (word + number)
+    return keyword
+    
+def generate_keyword():
+    return generate_key()
 
-def generate_screen_name():
-    unique_screen_name = Keys.new_screen_name_process(profiles_database_array)
-    return unique_screen_name
-
-def create_new_profile(new_GlassCell_request, profiles_database_array):
+def create_new_profile(profiles_database_array, new_GlassCell_request):
     # read in the existing database
     DatabaseControl.read_in_database()
 
     # generate a unique keyword
-    new_keyword = generate_keyword(profiles_database_array)
+    new_keyword = generate_keyword()
 
     # generate a unique screen name
-    new_screen_name = generate_screen_name(profiles_database_array)
+    new_screen_name = generate_keyword()
 
     # get creation date for today
     now = datetime.datetime.now()
     new_creation_date = now.strftime("%B %d, %Y %H:%M:%S")
 
     # get recent location
-    new_recent_location = new_GlassCell_request.getLocation()
+    new_recent_location = new_GlassCell_request.get_location()
 
     # create an empty the signal array
     signal_array = []
@@ -99,7 +105,7 @@ def create_new_profile(new_GlassCell_request, profiles_database_array):
     first_signal = Signals.Signal(
                   keyword=new_GlassCell_request.get_keyword(),
                   location=new_GlassCell_request.get_location(),
-                  date_time=new_GlassCell_request.get_date_time(),
+                  date_time=new_GlassCell_request.get_signal_date_time(),
                   distress_level=new_GlassCell_request.get_distress_level(),
                   message=new_GlassCell_request.get_msg(),
                   index=0)
